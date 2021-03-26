@@ -1,3 +1,125 @@
-<p>
-Metehan
-</p>
+<head >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<div class="breadcrumb">
+  <div  class="col md-6" style="float: left;">
+      <span class="breadcrumb-item active" >Net Gelir - Tek Yıllık</span>
+  </div>
+<div class="col md-6" style="float: right;">
+      <span   style="color: grey;float: right;">METEHAN BİÇER</span>
+  </div>
+</div>
+<div  id="yenikayit" class="collapse card" >
+<div style="margin-left: 10px;" class="card-body" >
+  <div  class="row">
+    <div  class="col-6">
+      <h4 >Net Gelir - Tek Yıllık (Değerleme Yılı: 2021)</h4>
+    </div>
+    <div class="col-6 text-right">
+      <button style="outline: none;"  class="card-header-action text-black btn btn-link btn-close" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+      </svg>
+      </button>
+    </div>
+    
+  </div>
+  <hr  style="border: 1px solid red;">
+    <form novalidate class="ng-untouched ng-pristine ng-invalid">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 form-group">
+          <select  #il type="text" class="form-control" style="width: 570px;" id="ilid" placeholder="İl Seçiniz">
+            <option disabled value="ilsec">İl Seçiniz</option>
+            <option  value="Ankara">Ankara</option>
+            <option  value="İstanbul">İstanbul</option>
+            <option  value="Kars">Kars</option>
+          </select>
+        </div>
+        <div class="col-lg-4 col-md-4 form-group">
+          <select  #ilce type="text" class="form-control" style="width: 570px;" id="ilceid" placeholder="İlçe Seçiniz">
+            <option disabled value="ilcesec">İlçe Seçiniz</option>
+            <option  value="Ankara">Keçiören</option>
+            <option  value="İstanbul">Çankaya</option>
+            <option  value="Kars">Yenimahalle</option>
+          </select>
+        </div>
+        <div class="col-lg-4 col-md-4 form-group">
+          <select  #mahalle type="text" class="form-control" style="width: 570px;" id="mahalleid" placeholder="Mahalle/Köy Seçiniz">
+            <option disabled value="mahallesec">Mahalle/Köy Seçiniz</option>
+            <option  value="Esertepe">Esertepe</option>
+            <option  value="Yayla">Yayla</option>
+            <option  value="Kars">Ayvalı</option>
+          </select>
+        </div>
+      </div>
+      <!-- asdasdsad -->
+      <div class="row">
+        <div class="col-lg-4 col-md-4 form-group">
+          
+        </div>
+        <div class="col-lg-4 col-md-4 form-group">
+          <input #ada type="number" class="input" style="width: 270px; float: left; margin-top: 12px;" id="ada" placeholder="Ada No">
+          <input #parsel type="number" class="input" style="width: 270px; float: right;margin-right: 32px; margin-top: 12px;" id="parsel" placeholder="Parsel No">
+        </div>
+        <div class="col-lg-4 col-md-4 form-group">
+            <button  class="btn btn-block btn-warning" style="width: 250px; float: left; height: 35px; margin-top: 8px;" type="button"><svg style="margin-bottom: 5px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+              Tarım Parseli Sorgula
+            </button>
+            <button  class="btn btn-block btn-warning" style="width: 250px;float: right; margin-right: 30px;height: 35px;" type="button"><svg style="margin-bottom: 5px;margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+              Destek Sorgula
+            </button>
+          </div>
+        </div>
+        <!-- parsel yüzölçümü olacak bunun üstünde -->
+        <div style="float: left;" class="row">
+          <div class="col-lg-4 col-md-4 form-group"> <select style="width: 150px; height: 35px;" name="kuru" id="kuru">
+          <option>Kuru</option>
+          <option>Sulu</option>
+        </select>
+      </div>
+          </div>
+    </form>
+</div>
+
+</div>
+
+<div class="card">
+<div  style="margin-left: 10px;"  class="card-body">
+  <div  class="row">
+      <div  class="col-md-12">
+          <div class="row">
+                  <h4 style="margin-left: 15px;">Net Gelir -Tek Yıllık</h4>
+          </div>
+          <hr  style="border: 1px solid red; margin-top: 5px;">
+                  </div>
+                  <div style="margin-left: 14px;" class="row">
+                  <button data-toggle="collapse" data-target="#yenikayit"  class="btn" style="background-color: #980000; color: white;" type="button"><i class="fa fa-plus" aria-hidden="true"></i>
+                    Yeni Kayıt
+                  </button>
+                  <button (click)="alert()" style="margin-left: 5px;" class="btn btn-secondary" type="button">
+                  <svg  style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
+                  </svg>FİLTRE </button>
+                </div>
+                
+              </div>
+              
+          </div>
+        </div>
+
+
+
+        
+
+
+
+
+        <!-- <p>
+          <a class="btn btn-secondary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><svg style="margin-right: 5px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel-fill" viewBox="0 0 16 16">
+            <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
+          </svg>FİLTRE 
+          </a>
+        </p> -->

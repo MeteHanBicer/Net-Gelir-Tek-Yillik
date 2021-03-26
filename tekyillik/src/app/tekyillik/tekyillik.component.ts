@@ -11,5 +11,7 @@ export class TekyillikComponent implements OnInit {
 
   ngOnInit() {
   }
-
+alert(){
+  alert("Filreyi Zaten Başka Ekranda Yaptım");
+}
 }
