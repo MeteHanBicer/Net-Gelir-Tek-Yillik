@@ -13,4 +13,8 @@ model=new model();
   addList(liste:Liste){
     this.model.liste.push(liste);
   }
+  delete(liste:Liste){
+    this.model.liste = this.model.liste.filter(p=>p!==liste);
+
+  }
 }

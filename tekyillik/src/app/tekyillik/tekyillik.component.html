@@ -1,4 +1,5 @@
 <head >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <div class="breadcrumb">
@@ -9,6 +10,8 @@
       <span   style="color: grey;float: right;">METEHAN BİÇER</span>
   </div>
 </div>
+
+<!-- Collapse yeni kayıt -->
 <div  id="yenikayit"  class="collapse card" >
 <div style="margin-left: 10px;" class="card-body" >
   <div  class="row">
@@ -103,7 +106,100 @@
 </div>
 
 
-
+<!-- collapse güncelle -->
+<div *ngIf="liste"  id="guncelle"  class="collapse card" >
+  <div style="margin-left: 10px;" class="card-body" >
+    <div  class="row">
+      <div  class="col-6">
+        <h4 >Güncelle Net Gelir - Tek Yıllık (Değerleme Yılı: 2021)</h4>
+      </div>
+      <div class="col-6 text-right">
+        <button data-toggle="collapse" data-target="#guncelle" class="card-header-action text-black btn btn-link btn-close" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </button>
+      </div>
+      
+    </div>
+    <hr  style="border: 1px solid red;">
+      <form novalidate class="ng-untouched ng-pristine ng-invalid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 form-group">
+            <select #il [value]="liste.il" type="text" class="form-control" style="width: 570px;" id="ilid" placeholder="İl Seçiniz">
+              <option disabled value="ilsec">İl Seçiniz</option>
+              <option  value="Ankara">Ankara</option>
+              <option   value="İstanbul">İstanbul</option>
+              <option   value="Kars">Kars</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 form-group">
+            <select #ilce [value]="liste.ilce"    type="text"  class="form-control" style="width: 570px;" id="ilceid" placeholder="İlçe Seçiniz">
+              <option disabled value="ilcesec">İlçe Seçiniz</option>
+              <option value="Keçiören">Keçiören</option>
+              <option  value="Çankaya">Çankaya</option>
+              <option  value="Yenimahalle">Yenimahalle</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 form-group">
+            <select [value]="liste.mahalle"  #mahalle type="text" class="form-control" style="width: 570px;" id="mahalleid" placeholder="Mahalle/Köy Seçiniz">
+              <option disabled value="mahallesec">Mahalle/Köy Seçiniz</option>
+              <option  value="Esertepe">Esertepe</option>
+              <option  value="Yayla">Yayla</option>
+              <option  value="Ayvalı">Ayvalı</option>
+            </select>
+          </div>
+        </div>
+        <!-- asdasdsad -->
+        <div class="row">
+          <div class="col-lg-4 col-md-4 form-group">
+          </div>
+          <div class="col-lg-4 col-md-4 form-group">
+            <input [value]="liste.ada" #ada type="number" class="input" style="width: 270px; float: left; margin-top: 12px;" id="ada" placeholder="Ada No">
+            <input [value]="liste.parsel" #parsel type="number" class="input" style="width: 270px; float: right;margin-right: 32px; margin-top: 12px;" id="parsel" placeholder="Parsel No">
+          </div>
+          <div class="col-lg-4 col-md-4 form-group">
+              <button (click)="tarim()"  class="btn btn-block btn-warning" style="width: 250px; float: left; height: 35px; margin-top: 8px;" type="button"><svg style="margin-bottom: 5px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+                Tarım Parseli Sorgula
+              </button>
+              <button (click)="destek()"  class="btn btn-block btn-warning" style="width: 250px;float: right; margin-right: 30px;height: 35px;" type="button"><svg style="margin-bottom: 5px;margin-right: 10px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+                Destek Sorgula
+              </button>
+            </div>
+          </div>
+            <div  class="row" style="background-color: rgb(228,231,234,1); padding-top: 4px;">
+              <div  class="col-md-6 form-group">
+                <label>Tapu Alanı(m²)</label>
+                <input #tapualan  class="form-control " type="text">
+              </div>
+              <div  class="col-md-6 form-group">
+                <label>Nitelik</label>
+                <input #nitelik  class="form-control"  type="text">
+              </div>
+            </div>
+          <!-- parsel yüzölçümü olacak bunun üstünde -->
+          <div  style="float: left; margin-top: 20px;" class="row">
+            <div class="col-md-4 form-group"> <select #kuru style="width: 150px; height: 35px;" name="kuru" id="kuru">
+            <option value="Kuru">Kuru</option>
+            <option value="Sulu">Sulu</option>
+          </select>
+        </div>
+        
+            </div>
+            <div style=" margin-top: 25px; margin-left: 900px;">
+              <button (click)="add(il.value,ilce.value,mahalle.value,ada.value,parsel.value,tapualan.value,nitelik.value,kuru.value)" class="btn" style="background-color: #980000; color: white;" type="button"><i class="fa fa-plus" aria-hidden="true"></i>
+                Yeni Kayıt
+              </button>
+            </div>
+      </form>
+  </div>
+  
+  </div>
+<!-- collapse güncelle bitiş -->
 <div class="card">
 <div  style="margin-left: 10px;"  class="card-body">
   <div  class="row">
@@ -144,8 +240,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let l of  liste" >
+              <tr *ngFor="let l of  getliste()" >
                 <td><a data-toggle="collapse" data-target="#arti" class="detail-icon" href="#"> <i class="fa fa-plus"></i> </a></td>
+
+                <button data-toggle="collapse" data-target="#guncelle" (click)="onSelectList(l)" style="margin-top: 5px;" type="button" class="btnDuzenle btn btn-ghost" title="Güncelle">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button (click)="delete(l)" style="margin-top: 5px;" type="button" class="btn btn btn-ghost" title="Sil">
+                  <i class="fa fa-trash" aria-hidden="true" style="color: red;"></i>
+                  </button>
+
+
 
                 <td style="text-align: center; width: 30px; ">
                   <div class="dropdown" aria-labelledby="dropdownMenuButton">
@@ -154,19 +259,12 @@
                   <div class="dropdown-menu" style="background-color: lightgrey; position: absolute; transform: translate3d(0px, 28px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
                     <div class="btn-group toolbar-mobile-block">
                       <div class="btn-group mr-1">
-                        <button type="button" class="btnDuzenle btn btn-ghost" title="Güncelle">
-                          <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </button>
-                        <button type="button" class="btnSil btn btn-ghost" title="Sil">
-                          <i class="fa fa-trash" aria-hidden="true" style="color: red;"></i>
-                          </button>
-                          <button type="button" class="btnGecmisBilgisi btn btn-ghost" title="Tarihçe">
-                            <i class="fa fa-history" aria-hidden="true"></i>
-                          </button>
                         </div>
                       </div>
                     </div>
-                </div></td>
+                </div>
+                
+              </td>
                 <td>{{l.il}}</td>
                 <td>{{l.ilce}}</td>
                 <td>{{l.mahalle}}</td>

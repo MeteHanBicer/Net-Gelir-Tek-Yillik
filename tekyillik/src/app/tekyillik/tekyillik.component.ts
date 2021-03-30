@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Liste, model } from './model';
 
@@ -7,16 +7,26 @@ import { Liste, model } from './model';
   templateUrl: './tekyillik.component.html',
   styleUrls: ['./tekyillik.component.css']
 })
+
 export class TekyillikComponent implements OnInit {
-  liste:Liste[];
+selectedList : Liste;
+@Input()  liste:Liste;
   constructor(private service:ServiceService) { }
 
   ngOnInit() {
-    this.liste = this.service.getList();
   }
-  
 
+onSelectList(liste:Liste){
+  this.selectedList = liste;
+}
 
+  getliste(): Liste[]{
+return this.service.getList();
+  }
+  delete(liste : Liste){
+this.service.delete(liste);
+this.ngOnInit();
+  }
 filtre(){
   alert("Filreyi Zaten Başka Ekranda Yaptım");
 }
