@@ -36,11 +36,11 @@
           </select>
         </div>
         <div class="col-lg-4 col-md-4 form-group">
-          <select   type="text"  class="form-control" style="width: 570px;" id="ilceid" placeholder="İlçe Seçiniz">
+          <select #ilce   type="text"  class="form-control" style="width: 570px;" id="ilceid" placeholder="İlçe Seçiniz">
             <option disabled value="ilcesec">İlçe Seçiniz</option>
-            <option value="kecioren">Keçiören</option>
-            <option  value="cankaya">Çankaya</option>
-            <option  value="yenimahalle">Yenimahalle</option>
+            <option value="Keçiören">Keçiören</option>
+            <option  value="Çankaya">Çankaya</option>
+            <option  value="Yenimahalle">Yenimahalle</option>
           </select>
         </div>
         <div class="col-lg-4 col-md-4 form-group">
@@ -48,14 +48,13 @@
             <option disabled value="mahallesec">Mahalle/Köy Seçiniz</option>
             <option  value="Esertepe">Esertepe</option>
             <option  value="Yayla">Yayla</option>
-            <option  value="Kars">Ayvalı</option>
+            <option  value="Ayvalı">Ayvalı</option>
           </select>
         </div>
       </div>
       <!-- asdasdsad -->
       <div class="row">
         <div class="col-lg-4 col-md-4 form-group">
-          
         </div>
         <div class="col-lg-4 col-md-4 form-group">
           <input #ada type="number" class="input" style="width: 270px; float: left; margin-top: 12px;" id="ada" placeholder="Ada No">
@@ -76,27 +75,32 @@
         </div>
           <div  class="row" style="background-color: rgb(228,231,234,1); padding-top: 4px;">
             <div  class="col-md-6 form-group">
-              <label>Parsel Yüzölçümü (m²)</label>
-              <input  class="form-control " type="text" disabled="">
+              <label>Tapu Alanı(m²)</label>
+              <input #tapualan  class="form-control " type="text">
             </div>
             <div  class="col-md-6 form-group">
               <label>Nitelik</label>
-              <input  class="form-control"  type="text" disabled="">
+              <input #nitelik  class="form-control"  type="text">
             </div>
           </div>
         <!-- parsel yüzölçümü olacak bunun üstünde -->
         <div  style="float: left; margin-top: 20px;" class="row">
-          <div class="col-md-4 form-group"> <select style="width: 150px; height: 35px;" name="kuru" id="kuru">
-          <option>Kuru</option>
-          <option>Sulu</option>
+          <div class="col-md-4 form-group"> <select #kuru style="width: 150px; height: 35px;" name="kuru" id="kuru">
+          <option value="Kuru">Kuru</option>
+          <option value="Sulu">Sulu</option>
         </select>
       </div>
+      
+          </div>
+          <div style=" margin-top: 25px; margin-left: 900px;">
+            <button (click)="add(il.value,ilce.value,mahalle.value,ada.value,parsel.value,tapualan.value,nitelik.value,kuru.value)" class="btn" style="background-color: #980000; color: white;" type="button"><i class="fa fa-plus" aria-hidden="true"></i>
+              Yeni Kayıt
+            </button>
           </div>
     </form>
 </div>
 
 </div>
-
 
 
 
@@ -140,18 +144,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let l of  getListe()" >
+              <tr *ngFor="let l of  liste" >
                 <td><a data-toggle="collapse" data-target="#arti" class="detail-icon" href="#"> <i class="fa fa-plus"></i> </a></td>
 
                 <td style="text-align: center; width: 30px; ">
-                  <div class="dropdown">
+                  <div class="dropdown" aria-labelledby="dropdownMenuButton">
                   <button id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" type="button" style="background-color: red;" class="btn btn-dark btn-sm dropdown-toggle">
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
+                  <div class="dropdown-menu" style="background-color: lightgrey; position: absolute; transform: translate3d(0px, 28px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
+                    <div class="btn-group toolbar-mobile-block">
+                      <div class="btn-group mr-1">
+                        <button type="button" class="btnDuzenle btn btn-ghost" title="Güncelle">
+                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <button type="button" class="btnSil btn btn-ghost" title="Sil">
+                          <i class="fa fa-trash" aria-hidden="true" style="color: red;"></i>
+                          </button>
+                          <button type="button" class="btnGecmisBilgisi btn btn-ghost" title="Tarihçe">
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                 </div></td>
                 <td>{{l.il}}</td>
                 <td>{{l.ilce}}</td>
