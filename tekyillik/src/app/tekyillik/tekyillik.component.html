@@ -83,7 +83,7 @@
             </div>
             <div  class="col-md-6 form-group">
               <label>Nitelik</label>
-              <input #nitelik  class="form-control"  type="text">
+              <input  #nitelik  class="form-control"  type="text">
             </div>
           </div>
         <!-- parsel yüzölçümü olacak bunun üstünde -->
@@ -107,11 +107,11 @@
 
 
 <!-- collapse güncelle -->
-<div *ngIf="liste"  id="guncelle"  class="collapse card" >
+<div   id="guncelle"  class="collapse card" >
   <div style="margin-left: 10px;" class="card-body" >
     <div  class="row">
       <div  class="col-6">
-        <h4 >Güncelle Net Gelir - Tek Yıllık (Değerleme Yılı: 2021)</h4>
+        <h4 >Güncelleme Net Gelir - Tek Yıllık (Değerleme Yılı: 2021)</h4>
       </div>
       <div class="col-6 text-right">
         <button data-toggle="collapse" data-target="#guncelle" class="card-header-action text-black btn btn-link btn-close" type="button">
@@ -174,16 +174,16 @@
             <div  class="row" style="background-color: rgb(228,231,234,1); padding-top: 4px;">
               <div  class="col-md-6 form-group">
                 <label>Tapu Alanı(m²)</label>
-                <input #tapualan  class="form-control " type="text">
+                <input [value]="liste.tapualani" #tapualan  class="form-control " type="text">
               </div>
               <div  class="col-md-6 form-group">
                 <label>Nitelik</label>
-                <input #nitelik  class="form-control"  type="text">
+                <input [value]="liste.nitelik" #nitelik  class="form-control"  type="text">
               </div>
             </div>
           <!-- parsel yüzölçümü olacak bunun üstünde -->
           <div  style="float: left; margin-top: 20px;" class="row">
-            <div class="col-md-4 form-group"> <select #kuru style="width: 150px; height: 35px;" name="kuru" id="kuru">
+            <div class="col-md-4 form-group"> <select [value]="liste.kurusulu" #kuru style="width: 150px; height: 35px;" name="kuru" id="kuru">
             <option value="Kuru">Kuru</option>
             <option value="Sulu">Sulu</option>
           </select>

@@ -9,9 +9,9 @@ import { Liste, model } from './model';
 })
 
 export class TekyillikComponent implements OnInit {
-selectedList : Liste;
-@Input()  liste:Liste;
+    selectedList : Liste;
   constructor(private service:ServiceService) { }
+  @Input()  liste : Liste;  
 
   ngOnInit() {
   }
